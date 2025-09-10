@@ -4,7 +4,8 @@ import java.util.Scanner;
 
 public  class message{
     Scanner reader = new Scanner(System.in);
-    system.out.println
+    System.out.println("Write a message")
+    String input = reader
 
     
 }

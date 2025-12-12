@@ -2,27 +2,37 @@ import java.util.*;
 
 public class Main {
     public static void main(String[] args) {
-        PaymentCard paulsCard = new PaymentCard(20);
-        PaymentCard mattsCard = new PaymentCard(30);
+        Scanner ievade = new Scanner(System.in);
+        ArrayList<Books> books = new ArrayList<>();
 
-        paulsCard.eatHeartily();
-        mattsCard.eatAffordably();
+        while (true) {
+            System.out.print("Name:");
+            String name = ievade.nextLine();
 
-        System.out.println("Paul:" + paulsCard);
-        System.out.println("Matt:" + mattsCard);
+            if (name.equals("")) {
+                break;
+            }
 
-        paulsCard.addMoney(20);
-        mattsCard.eatHeartily();
+            System.out.print("Pages: ");
+            int page = Integer.valueOf(ievade.nextLine());
 
-        System.out.println("Paul:" + paulsCard);
-        System.out.println("Matt:" + mattsCard);
+            System.out.print("Publication year: ");
+            int edition = Integer.valueOf(ievade.nextLine());
 
-        paulsCard.eatAffordably();
-        paulsCard.eatAffordably();
-        mattsCard.addMoney(50);
+            books.add(new Books(name, page, edition));
+        }
+        System.out.print("What info will be printed? ");
+        String info = ievade.nextLine();
 
-        System.out.println("Paul:" + paulsCard);
-        System.out.println("Matt:" + mattsCard);
+        for (Books gr : books) {
 
+            if (info.equals("everything")) {
+                System.out.println(gr.toString());
+                
+            } else if (info.equals("name")) {
+                System.out.println(gr.getTitle());
+            }
+
+        }
     }
 }

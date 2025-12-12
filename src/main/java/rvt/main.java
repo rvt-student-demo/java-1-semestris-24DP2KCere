@@ -1,32 +1,28 @@
-import java.util.Scanner;
+import java.util.*;
 
-public class objects {
+public class Main {
     public static void main(String[] args) {
-        Statistics numbers = new Statistics();
-        Scanner scanner = new Scanner(System.in);
-        System.out.println("Enter the numbers:");
+        PaymentCard paulsCard = new PaymentCard(20);
+        PaymentCard mattsCard = new PaymentCard(30);
 
-        Statistics evensum = new Statistics();
-        Statistics oddsum = new Statistics();
+        paulsCard.eatHeartily();
+        mattsCard.eatAffordably();
 
-        while (true) {
-            int number = scanner.nextInt();
-            if (number == -1) { // 2 vienadibas zimes parbauda vai divi mainigie atsaucas uz vienu un to pašu
-                                // vertibu atmiņā.
-                break;
-            }
-            if (number % 2 == 0) {
-                evensum.addNumber(number);
-            } else {
-                oddsum.addNumber(number);
-                ;
-            }
-            numbers.addNumber(number);
+        System.out.println("Paul:" + paulsCard);
+        System.out.println("Matt:" + mattsCard);
 
-        }
-        System.out.println("Summ: " + numbers.sum());
-        System.out.println("Evennsum " + evensum.sum());
-        System.out.println("Oddsum " + oddsum.sum());
+        paulsCard.addMoney(20);
+        mattsCard.eatHeartily();
+
+        System.out.println("Paul:" + paulsCard);
+        System.out.println("Matt:" + mattsCard);
+
+        paulsCard.eatAffordably();
+        paulsCard.eatAffordably();
+        mattsCard.addMoney(50);
+
+        System.out.println("Paul:" + paulsCard);
+        System.out.println("Matt:" + mattsCard);
 
     }
 }
